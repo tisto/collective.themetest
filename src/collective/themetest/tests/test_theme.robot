@@ -91,6 +91,11 @@ Capture Folder Screenshots
     Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_listing
     Capture screenshot  folder-listing-view.png
 
+Capture Control Panel Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go To  ${PLONE_URL}/@@overview-controlpanel
+    Capture screenshot  controlpanel-overview.png
+
 
 *** Keywords ***
 

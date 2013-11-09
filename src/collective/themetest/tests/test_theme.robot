@@ -39,7 +39,6 @@ Capture Login Successful Screenshot
     Page should not contain button  Log in
     Capture screenshot  login-successful.png
 
-
 Capture Front Page Screenshot
     I'm logged in as a 'Site Administrator'
     Go to  ${PLONE_URL}
@@ -59,6 +58,38 @@ Capture Document Screenshots
 #    Click Link  id=user-name
 #    Wait until keyword succeeds  10  1  Click Link  xpath=//li[@id='personaltools-logout']/a
 #    Capture screenshot  document-anonymous-view.png
+
+Capture Folder Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go to  ${PLONE_URL}/createObject?type_name=Folder
+    Wait until page contains element  css=#archetypes-fieldname-title
+    Input text  name=title  ${DUMMY_TEXT_LINE}
+    Input text  name=description  ${DUMMY_TEXT_SHORT}
+    Capture screenshot  folder-edit.png
+    Click Button  Save
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/createObject?type_name=Document
+    Input text  name=title  Document 1
+    Click Button  Save
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/createObject?type_name=Document
+    Input text  name=title  Document 2
+    Click Button  Save
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/createObject?type_name=Document
+    Input text  name=title  Document 3
+    Click Button  Save
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/
+    Capture screenshot  folder-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_contents
+    Capture screenshot  folder-contents-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_summary_view
+    Capture screenshot  folder-summary-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_full_view
+    Capture screenshot  folder-full-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_tabular_view
+    Capture screenshot  folder-tabular-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/atct_album_view
+    Capture screenshot  folder-album-view.png
+    Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_listing
+    Capture screenshot  folder-listing-view.png
 
 
 *** Keywords ***

@@ -91,6 +91,26 @@ Capture Folder Screenshots
     Go To  ${PLONE_URL}/colorless-green-ideas-sleep-furiously/folder_listing
     Capture screenshot  folder-listing-view.png
 
+Capture Search Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go To  ${PLONE_URL}/@@search?SearchableText=Plone
+    Capture screenshot  search.png
+
+Capture Sitemap Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go To  ${PLONE_URL}/sitemap
+    Capture screenshot  sitemap.png
+
+Capture Accessibility Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go To  ${PLONE_URL}/accessibility-info
+    Capture screenshot  accessibility.png
+
+Capture Contact Form Screenshots
+    I'm logged in as a 'Site Administrator'
+    Go To  ${PLONE_URL}/contact-info
+    Capture screenshot  contact.png
+
 Capture Control Panel Screenshots
     I'm logged in as a 'Site Administrator'
     Go To  ${PLONE_URL}/@@overview-controlpanel

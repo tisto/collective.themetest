@@ -4,6 +4,8 @@ Resource  plone/app/robotframework/selenium.robot
 
 Library  Remote  ${PLONE_URL}/RobotRemote
 
+Variables  plone/app/testing/interfaces.py
+
 Test Setup  Open test browser
 Test Teardown  Close all browsers
 
@@ -16,6 +18,27 @@ ${DUMMY_TEXT} =  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di
 
 
 *** Test Cases ***
+
+Capture Login Form Screenshot
+    Go to  ${PLONE_URL}/login
+    Capture screenshot  login.png
+
+Capture Login Failed Screenshot
+    Go to  ${PLONE_URL}/login
+    Input text  __ac_name  invalid username
+    Input text  __ac_password  invalid password
+    Click Button  Log in
+    Page should contain button  Log in
+    Capture screenshot  login-failed.png
+
+Capture Login Successful Screenshot
+    Go to  ${PLONE_URL}/login
+    Input text  __ac_name  ${SITE_OWNER_NAME}
+    Input text  __ac_password  ${SITE_OWNER_PASSWORD}
+    Click Button  Log in
+    Page should not contain button  Log in
+    Capture screenshot  login-successful.png
+
 
 Capture Front Page Screenshot
     I'm logged in as a 'Site Administrator'
@@ -36,6 +59,7 @@ Capture Document Screenshots
 #    Click Link  id=user-name
 #    Wait until keyword succeeds  10  1  Click Link  xpath=//li[@id='personaltools-logout']/a
 #    Capture screenshot  document-anonymous-view.png
+
 
 *** Keywords ***
 

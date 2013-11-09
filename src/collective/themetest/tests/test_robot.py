@@ -7,7 +7,7 @@ import unittest
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTests([
-        layered(robotsuite.RobotTestSuite("robot_test.txt"),
+        layered(robotsuite.RobotTestSuite("test_theme.robot"),
                 layer=COLLECTIVE_THEMETEST_FUNCTIONAL_TESTING)
     ])
     return suite

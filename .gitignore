@@ -24,3 +24,7 @@ docs/Makefile
 docs/make.bat
 docs/doctrees
 docs/html
+docs/source/_screenshots/*.png
+log.html
+report.html
+output.xml

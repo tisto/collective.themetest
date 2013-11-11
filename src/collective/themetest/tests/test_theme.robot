@@ -111,11 +111,6 @@ Capture Contact Form Screenshots
     Go To  ${PLONE_URL}/contact-info
     Capture screenshot  contact.png
 
-Capture Control Panel Screenshots
-    I'm logged in as a 'Site Administrator'
-    Go To  ${PLONE_URL}/@@overview-controlpanel
-    Capture screenshot  controlpanel-overview.png
-
 
 *** Keywords ***
 
